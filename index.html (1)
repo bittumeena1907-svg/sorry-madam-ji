@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorry Madam Ji ❤️</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Poppins', sans-serif;
+            padding: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Animated background hearts */
+        .bg-hearts {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+        .bg-hearts span {
+            position: absolute;
+            color: rgba(255, 107, 107, 0.08);
+            font-size: 3em;
+            animation: floatUp 6s infinite linear;
+        }
+        @keyframes floatUp {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            100% { transform: translateY(-100px) rotate(720deg); opacity: 0; }
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border-radius: 30px;
+            padding: 50px 40px;
+            max-width: 520px;
+            width: 100%;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.5), 0 0 40px rgba(102, 126, 234, 0.15);
+            position: relative;
+            z-index: 1;
+            animation: fadeIn 1.2s ease;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: scale(0.9) translateY(30px); }
+            100% { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        /* Big main icon */
+        .main-icon {
+            font-size: 5em;
+            margin-bottom: 10px;
+            display: inline-block;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+            100% { transform: scale(1); }
+        }
+
+        /* "Sorry Madam Ji" - bade akshar */
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4em;
+            font-weight: 700;
+            background: linear-gradient(135deg, #f093fb, #f5576c, #ffecd2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: none;
+            margin-bottom: 15px;
+            line-height: 1.2;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.6em;
+            background: linear-gradient(135deg, #ffecd2, #fcb69f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 30px;
+        }
+
+        .divider {
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #f093fb, #f5576c);
+            margin: 0 auto 30px;
+            border-radius: 10px;
+        }
+
+        .message {
+            color: #e0d4ff;
+            font-size: 1.15em;
+            font-weight: 300;
+            line-height: 1.9;
+            margin-bottom: 30px;
+            letter-spacing: 0.5px;
+        }
+        .message .highlight {
+            color: #ff8a9e;
+            font-weight: 600;
+        }
+
+        .heart-row {
+            margin: 25px 0;
+            font-size: 1.8em;
+            color: #ff6b6b;
+            animation: pulse 2s infinite;
+        }
+
+        .forgive-btn {
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            border: none;
+            color: white;
+            padding: 16px 50px;
+            font-size: 1.2em;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 10px 30px rgba(245, 87, 108, 0.4);
+            font-family: 'Poppins', sans-serif;
+        }
+        .forgive-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(245, 87, 108, 0.6);
+        }
+        .forgive-btn:active {
+            transform: scale(0.95);
+        }
+
+        .footer {
+            margin-top: 25px;
+            font-size: 0.85em;
+            color: rgba(255,255,255,0.3);
+            letter-spacing: 1px;
+        }
+
+        /* Stylish floating particles */
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+        .particle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: rgba(240, 147, 251, 0.4);
+            border-radius: 50%;
+            animation: rise 8s infinite;
+        }
+        @keyframes rise {
+            0% { transform: translateY(100vh) scale(0); opacity: 0; }
+            20% { opacity: 1; }
+            100% { transform: translateY(-50px) scale(1); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background floating hearts -->
+    <div class="bg-hearts" id="bgHearts"></div>
+    
+    <!-- Particles -->
+    <div class="particles" id="particles"></div>
+
+    <div class="card">
+        <div class="main-icon">💔</div>
+        
+        <!-- Bade akshar mein "Sorry Madam Ji" -->
+        <h1>Sorry<br>Madam Ji</h1>
+        <div class="subtitle">~ meri jaan ~</div>
+        <div class="divider"></div>
+        
+        <!-- Neeche wala message -->
+        <div class="message">
+            Main aapse <span class="highlight">bahut pyar</span> karta hun. 🤍<br><br>
+            Aaj ke baad mein <span class="highlight">kabhi aisi galti nahi karunga</span>.<br><br>
+            Please <span class="highlight">is baar maaf kar do</span> 🙏<br><br>
+            Aap mere liye duniya se bhi zyada important ho.<br>
+            <span style="color: #b8a9ff; font-style: italic;">"Mujhe aapki zaroorat hai..."</span>
+        </div>
+
+        <div class="heart-row">❤️ ❤️ ❤️</div>
+
+        <button class="forgive-btn" onclick="forgiveMe()">Maaf Kar Do 🙏</button>
+
+        <div class="footer">made with ❤️ just for you</div>
+    </div>
+
+    <script>
+        // Background hearts generate
+        const heartSymbols = ['♥', '♡', '❤', '💕'];
+        const bgContainer = document.getElementById('bgHearts');
+        for (let i = 0; i < 20; i++) {
+            let span = document.createElement('span');
+            span.textContent = heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
+            span.style.left = Math.random() * 100 + '%';
+            span.style.fontSize = (Math.random() * 3 + 1.5) + 'em';
+            span.style.animationDuration = (Math.random() * 6 + 4) + 's';
+            span.style.animationDelay = (Math.random() * 8) + 's';
+            bgContainer.appendChild(span);
+        }
+
+        // Particles generate
+        const particlesContainer = document.getElementById('particles');
+        for (let i = 0; i < 30; i++) {
+            let div = document.createElement('div');
+            div.className = 'particle';
+            div.style.left = Math.random() * 100 + '%';
+            div.style.animationDuration = (Math.random() * 6 + 5) + 's';
+            div.style.animationDelay = (Math.random() * 8) + 's';
+            div.style.width = (Math.random() * 6 + 3) + 'px';
+            div.style.height = div.style.width;
+            particlesContainer.appendChild(div);
+        }
+
+        function forgiveMe() {
+            // Alert with style
+            const overlay = document.createElement('div');
+            overlay.style.cssText = `
+                position: fixed; top:0; left:0; right:0; bottom:0;
+                background: rgba(0,0,0,0.7); z-index:9999;
+                display: flex; align-items: center; justify-content: center;
+                backdrop-filter: blur(10px);
+                animation: fadeIn 0.4s ease;
+            `;
+            overlay.innerHTML = `
+                <div style="
+                    background: linear-gradient(135deg, #1a1a2e, #16213e);
+                    padding: 50px 40px; border-radius: 30px;
+                    text-align: center; border: 1px solid rgba(255,255,255,0.1);
+                    box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+                    animation: fadeIn 0.6s ease;
+                ">
+                    <div style="font-size: 5em; margin-bottom: 15px;">🥺❤️</div>
+                    <h2 style="color: #f093fb; font-family: 'Dancing Script', cursive; font-size: 2.8em;">
+                        Thank You Madam Ji!
+                    </h2>
+                    <p style="color: #d4c5ff; font-size: 1.3em; margin-top: 15px;">
+                        Main vaada karta hoon<br>aapko kabhi dukh nahi dunga ❤️
+                    </p>
+                    <button onclick="this.closest('div').closest('div').remove()" 
+                        style="
+                            margin-top: 25px; padding: 12px 40px; 
+                            background: linear-gradient(135deg, #667eea, #764ba2);
+                            border: none; color: white; border-radius: 50px;
+                            font-size: 1.1em; cursor: pointer; font-weight: 600;
+                            font-family: 'Poppins', sans-serif;
+                        ">I Love You 💕</button>
+                </div>
+            `;
+            document.body.appendChild(overlayonge);
+            overlay.onclick = function(e) {
+                if (e.target === overlay) overlay.remove();
+            };
+        }
+    </script>
+</body>
+</html>
